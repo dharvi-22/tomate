@@ -12,7 +12,7 @@ const Footer =() => {
                 </div>
                 <ul className="footer-links">
                     <li><a href="#privacy">Privacy Policy</a></li>
-                    <li className="footer-contact"><a href="#contact">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li className="footer-contact"><a href="mailto:info@tomate.com">info@tomate.com</a></li>
                 </ul>
                 <img src={whitelogo} alt="tomato logo" className="footer-logo"></img>
