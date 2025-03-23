@@ -15,7 +15,7 @@ const Footer =() => {
                     <li><a href="#contact">Contact</a></li>
                     <li className="footer-contact"><a href="mailto:info@tomate.com">info@tomate.com</a></li>
                 </ul>
-                <img src={whitelogo} alt="tomato logo" className="footer-logo"></img>
+                <a href="#home"><img src={whitelogo} alt="tomato logo" className="footer-logo"></img></a>
             </div>
         </footer>
     )

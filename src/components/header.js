@@ -9,8 +9,8 @@ const Header =() => {
             <nav className="nav" role="navigation" aria-labelledby="main-menu">
                 {/*Logos Container*/}
                 <div className="logos" aria-label="Tomato icons">
-                    <img src={icon} alt="tomato icon" className="icon"></img>
-                    <img src={logo} alt="tomato logo" className="logo"></img>
+                   <a href="#home"><img src={icon} alt="tomato icon" className="icon"></img></a> 
+                   <a href="#home"><img src={logo} alt="tomato logo" className="logo"></img></a>
                 </div>
                 <ul className="nav-links">
                     <li><a href="#explore">EXPLORE</a></li>
