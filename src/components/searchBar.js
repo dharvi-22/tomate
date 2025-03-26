@@ -15,6 +15,12 @@ const SearchBar = () => {
     const handleSearch = () => {
         fetchRecipes(searchTerm, selectedCategory);
     };
+    // Ensure category search works without requiring search term
+    const handleCategoryChange = (e) => {
+        const category = e.target.value;
+        setSelectedCategory(category);
+        fetchRecipes("", category); // Fetch only by category if no search term
+    };
 
     return (
         <div className ="search-bar">
@@ -23,7 +29,11 @@ const SearchBar = () => {
             <button onClick={handleSearch}>🔍</button>
 
             {/* dropdown for selecting recipe category */}
-            <select onChange={(e) => setSelectedCategory(e.target.value)}>
+            <select value={selectedCategory} onChange={(e) => {
+                setSelectedCategory(e.target.value);
+                //fetch recipes instantly when category is selected
+                fetchRecipes("", e.target.value);
+            }}>
                 <option value="">I know the category...</option>
                 <option value="breakfast">Breakfast</option>
                 <option value="lunch">Lunch</option>
@@ -31,7 +41,6 @@ const SearchBar = () => {
                 <option value="gluten free">Gluten-Free</option>
                 <option value="vegan">Vegan</option>
             </select>
-            <button conClick={handleSearch}>🔎</button>
         </div>
     );
 };

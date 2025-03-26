@@ -32,7 +32,7 @@ const RecipeProvider =({children}) =>{
 
         //if a category is selected, add it as a dietary filter
         if (category) {
-            url += `&diet=${category}`;
+            url += `&type=${category}`;
         }
 
         try {
