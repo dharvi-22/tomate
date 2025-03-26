@@ -23,7 +23,7 @@ const RecipeProvider =({children}) =>{
         //start loading state
         setLoading(true);
 
-        let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=12&addRecipeInformation=true`;
+        let url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${API_KEY}&number=20&addRecipeInformation=true`;
 
         //if a search term is provided, add it to the url
         if (query) {

@@ -1,0 +1,26 @@
+.search-bar{
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    justify-content: center;
+
+    @media (min-width: 768px){
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    input, select {
+        width: 220px;
+        padding: 0.75rem;
+        border: 1px solid #BD0300;
+        border-radius: 25px;
+    }
+    button{
+        padding: 0.75rem;
+        background-color: #BD0300;
+        color: white;
+        border: none;
+        cursor: pointer
+    }
+
+}

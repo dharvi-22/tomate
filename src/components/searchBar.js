@@ -2,6 +2,7 @@
 
 import { useState, useContext } from "react";
 import { RecipeContext } from "../context/recipeContext";
+import "./searchBar.scss";
 
 const SearchBar = () => {
     //store user input
@@ -39,7 +40,7 @@ const SearchBar = () => {
                 <option value="lunch">Lunch</option>
                 <option value="dinner">Dinner</option>
                 <option value="gluten free">Gluten-Free</option>
-                <option value="vegan">Vegan</option>
+                <option value="pasta">Pasta</option>
             </select>
         </div>
     );
