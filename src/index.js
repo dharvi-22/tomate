@@ -8,12 +8,12 @@ import RecipeProvider from './context/recipeContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-//  <React.StrictMode>
-//    <App />
-//  </React.StrictMode>
-  <RecipeProvider>
-    <Explore />
-  </RecipeProvider>
+  <React.StrictMode>
+     <App />
+  </React.StrictMode>
+// <RecipeProvider>
+//    <Explore />
+//  </RecipeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
