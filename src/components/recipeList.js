@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import {useContext} from "react";
 import {RecipeContext} from "../context/recipeContext";
-import "./recipeList.scss";
+import "../styles/recipeList.scss";
 
 const RecipeList = () =>{
     //get recipes and loading state

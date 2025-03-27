@@ -1,5 +1,6 @@
 import React from "react";
-import "./footer.scss";
+import { Link } from "react-router-dom";
+import "../styles/footer.scss";
 import whitelogo from '../assets/white-logo.svg';
 
 const Footer =() => {
@@ -8,14 +9,14 @@ const Footer =() => {
             <div className="footer-container">
                 <div className="footer-form" aria-label="form button">
                     <p>Can't find a recipe?</p>
-                    <a href="#form" className="footer-button">Request a Recipe</a>
+                    <Link to="/form" className="footer-button">Request a Recipe</Link>
                 </div>
                 <ul className="footer-links">
-                    <li><a href="#privacy">Privacy Policy</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><Link to="/">Privacy Policy</Link></li>
+                    <li><Link to="/">Contact</Link></li>
                     <li className="footer-contact"><a href="mailto:info@tomate.com">info@tomate.com</a></li>
                 </ul>
-                <a href="#home"><img src={whitelogo} alt="tomato logo" className="footer-logo"></img></a>
+                <Link to="/"><img src={whitelogo} alt="tomato logo" className="footer-logo"></img></Link>
             </div>
         </footer>
     )

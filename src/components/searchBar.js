@@ -2,7 +2,7 @@
 
 import { useState, useContext } from "react";
 import { RecipeContext } from "../context/recipeContext";
-import "./searchBar.scss";
+import "../styles/searchBar.scss";
 
 const SearchBar = () => {
     //store user input
