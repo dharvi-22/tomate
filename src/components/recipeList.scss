@@ -1,15 +1,17 @@
 .recipe-grid{
-    padding: 100px;
+    padding: 20px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
+    gap: 2rem;
 
     //tablet 3 columns
     @media(min-width: 768px) {
+        padding: 50px;
         grid-template-columns: repeat(3,1fr);
     }
     //desktop 4 columns 
     @media(min-width: 1024px) {
+        padding: 100px;
         grid-template-columns: repeat(4,1fr);
     }
 }
@@ -34,7 +36,7 @@
 
     img{
         width: 100%;
-        height: 240px;
+        height: 160px;
         object-fit: cover;
         display: block;
     
@@ -43,15 +45,27 @@
         }
     
          @media (min-width: 1024px) {
-            height: 340px; // Even taller for desktop
+            height: 320px; // Even taller for desktop
         }
     }
   }
+
 .load-more{
-    button{
-        border-radius: 25px;
-        color:#FEFDFE;
-        background-color: #BD0300;
-        padding: 10px 20px;
-    }
+    font-family: Quicksand, sans-serif;
+    font-size: 14px;
+    display: block;
+    margin: 1.5rem auto;
+    justify-content: center;
+    border-radius: 25px;
+    color:#FEFDFE;
+    background-color: #BD0300;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    cursor: pointer;
+}
+.load-more-container{
+    grid-column: 1/ -1;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
 }

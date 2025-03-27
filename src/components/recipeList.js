@@ -54,11 +54,13 @@ const RecipeList = () =>{
                     <p>{recipe.title}</p>
                 </div>
             ))}
-            {visibleCount <= recipes.length && (
-                <button className= "load-more" onClick={handleLoadMore}>
-                    view more
-                </button>
-            )}
+            <div className="load-more-container">
+                {visibleCount <= recipes.length && (
+                    <button className= "load-more" onClick={handleLoadMore}>
+                        view more
+                     </button>
+                )}
+            </div> 
         </div>
     );
 };

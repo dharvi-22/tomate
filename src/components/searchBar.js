@@ -25,10 +25,11 @@ const SearchBar = () => {
 
     return (
         <div className ="search-bar">
-            {/* input for searching by recipe name */}
-            <input type="text" placeholder="I am looking for..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
-            <button onClick={handleSearch}>🔍</button>
-
+            <div className="search-container">
+                {/* input for searching by recipe name */}
+                <input type="text" placeholder="I am looking for..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
+                <button onClick={handleSearch}>➜</button>
+            </div>
             {/* dropdown for selecting recipe category */}
             <select value={selectedCategory} onChange={(e) => {
                 setSelectedCategory(e.target.value);

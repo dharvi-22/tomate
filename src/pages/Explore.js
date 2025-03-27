@@ -6,6 +6,7 @@ import SearchBar from "../components/searchBar";
 import RecipeList from "../components/recipeList";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import "../styles/explore.scss";
 
 const Explore =() =>{
     return (
