@@ -11,7 +11,7 @@ const RecipeProvider =({children}) =>{
     //track loading state
     const [loading, setLoading] = useState(false);
 
-    const API_KEY = "ce9e413e261747efa6ee42b1d4b356ee";
+    const API_KEY = process.env.REACT_APP_API_KEY;
 
     //fetch recipes on initial load
     useEffect(() => {

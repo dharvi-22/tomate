@@ -64,6 +64,10 @@
     padding: 0.75rem 1.5rem;
     border: none;
     cursor: pointer;
+
+    &:hover{
+        background-color:#a70502;
+    }
 }
 .load-more-container{
     grid-column: 1/ -1;
@@ -71,3 +75,4 @@
     display: flex;
     justify-content: center;
 }
+
