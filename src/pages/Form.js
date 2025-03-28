@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {Select, Label, Button, SelectValue, Popover, ListBox, ListBoxItem } from "react-aria-components";
+
 import {ReactComponent as Mushroom } from "../assets/mushroom.svg";
 import {ReactComponent as Beet } from "../assets/beet.svg";
 import {ReactComponent as Brocoli } from "../assets/brocoli.svg";
@@ -63,19 +64,19 @@ const RecipeForm =() =>{
                 {error && <p className="error">{error}</p>}
 
                 {/* submit button */}
-                <button type="submit" className="red-button">submit</button>
+                <button type="submit" className="red-button">Submit</button>
             </form>
             <div className="form-illustrations">
                 <Mushroom className="shaking-svg"/>
+                <Chili className="shaking-svg"/>
                 <Beet className="shaking-svg"/>
                 <Brocoli className="shaking-svg"/>
                 <Peasnap className="shaking-svg"/>
                 <Carrot className="shaking-svg"/>
                 <Tomato className="shaking-svg"/>
 
-
             </div>
-            </div>
+        </div>
     );
 };
 

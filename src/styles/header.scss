@@ -35,6 +35,10 @@
         font-weight: 500;
         font-size: 14px;
 
+        :hover{
+            border-bottom: 2px solid #BD0300;
+        }
+
         li{
             white-space: nowrap;
             a{
@@ -77,8 +81,5 @@
         display: flex;
         justify-content: space-between;
     
-    :hover{
-        border-bottom: 2px solid #BD0300;
-    }
     }
 }
