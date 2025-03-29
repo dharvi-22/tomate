@@ -21,11 +21,15 @@
             display: inline-block;
             background: #FEFDFE;
             color: #454543;
-            font-size: 12px;
+            font-size: 12.5px;
             padding: 10px 20px;
             border-radius: 20px;
             text-decoration: none;
             margin-top: 10px;
+
+            &:hover{
+                color: #BD0300;
+            }
         }
     }
     .footer-links{
@@ -37,11 +41,17 @@
             margin: 12px 0;
             color:#FEFDFE;
             text-decoration: none;
-        }
+
         a{
             color:#FEFDFE;
             text-decoration: none;
+
+            &:hover{
+                border-bottom: 1.5px solid #FEFDFE;
+            }
         }
+        }
+
     }
     .footer-contact {
         a{

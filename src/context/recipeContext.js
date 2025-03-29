@@ -1,6 +1,6 @@
 //global context for calling and storing recipes from api
 
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 //create a context for recipes
 export const RecipeContext = createContext();
@@ -13,10 +13,6 @@ const RecipeProvider =({children}) =>{
 
     const API_KEY = process.env.REACT_APP_API_KEY;
 
-    //fetch recipes on initial load
-    useEffect(() => {
-        fetchRecipes();
-    },[]);
 
     //function to fetch recipes based on search term or category
     const fetchRecipes = async (query ="", category="") => {

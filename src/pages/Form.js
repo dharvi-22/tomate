@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {Select, Label, Button, SelectValue, Popover, ListBox, ListBoxItem } from "react-aria-components";
 
 import {ReactComponent as Mushroom } from "../assets/mushroom.svg";
 import {ReactComponent as Beet } from "../assets/beet.svg";
@@ -15,7 +14,11 @@ const RecipeForm =() =>{
 
     const [recipeName, setRecipeName] = useState("");
     const [category, setCategory] = useState("");
+    const [recipeLink, setRecipeLink] = useState("");
+    const [ingredients, setIngredients] = useState("");
     const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+
 
     // categories
     const categories = ["Breakfast", "Lunch", "Dinner", "Gluten-free", "Vegan"];
@@ -24,11 +27,17 @@ const RecipeForm =() =>{
         e.preventDefault();
         if (!recipeName || !category){
             setError("Please enter a recipe name and pick a category");
-            
+            setSuccess("")
         } else {
             setError("");
-            alert("Success! We've got your request and we will review it shortly");
+            setSuccess("Success! We've got your request and we will review it shortly!");
             //submission logic 
+
+            //reset form fields after successful submission
+            setRecipeName("");
+            setCategory("");
+            setRecipeLink("");
+            setIngredients("");
         }
     };
 
@@ -40,40 +49,39 @@ const RecipeForm =() =>{
             <form onSubmit={handleSubmit} className="form-group">
                 <input type= "text" placeholder="Recipe Name" value={recipeName} onChange={(e) => setRecipeName (e.target.value)}/>
                 
-                {/* aria dropdown */}
-                <Select className="form-dropdown" onSelectionChange={setCategory}>
-                    <Button className="form-button">
-                        <SelectValue/>
-                        <span aria-hidden="true">Select a Category ▼</span>
-                    </Button>
-                    <Popover className="form-popover">
-                        <ListBox className="listbox">
-                            {categories.map((cat) => (
-                                <ListBoxItem key={cat} id={cat} className="listbox-item">
-                                    {cat}
-                                </ListBoxItem>
-                            ))}
-                        </ListBox>
-                    </Popover>
-                </Select>
+                {/* category dropdown */}
+                <div className ="form-dropdown">
+                    <select value= {category} 
+                    onChange={(e) => setCategory(e.target.value)} className="custom-dropdown">
+                        <option value="" disabled>Select a Category</option>
+                        {categories.map((cat)=>(
+                            <option key={cat} value={cat}>{cat}</option>
+                        ))}
+                    </select>
+                </div>
 
-                <input type="text" placeholder="Recipe Link"/>
-                <textarea placeholder="Ingredients" rows="4"></textarea>
+                <p>Share a recipe link or alternatively, fill out at least 5 ingredients.</p>
+
+                <input type="text" placeholder="Recipe Link (Optional)" value={recipeLink} onChange={(e) => setRecipeLink(e.target.value)}/>
+                <textarea placeholder="Ingredients" rows="4" value={ingredients} onChange={(e) => setIngredients(e.target.value)}></textarea>
+                
+                {/* Success Message */}
+                {success && <p className="outcome">{success}</p>}
 
                 {/* Error Message */}
-                {error && <p className="error">{error}</p>}
+                {error && <p className="outcome">{error}</p>}
 
                 {/* submit button */}
                 <button type="submit" className="red-button">Submit</button>
             </form>
             <div className="form-illustrations">
-                <Mushroom className="shaking-svg"/>
-                <Chili className="shaking-svg"/>
-                <Beet className="shaking-svg"/>
-                <Brocoli className="shaking-svg"/>
-                <Peasnap className="shaking-svg"/>
-                <Carrot className="shaking-svg"/>
-                <Tomato className="shaking-svg"/>
+                <Carrot className="svg-1"/>
+                <Mushroom className="svg-2"/>
+                <Brocoli className="svg-3"/>
+                <Tomato className="svg-4"/>
+                <Beet className="svg-5"/>
+                <Chili className="svg-6"/>
+                <Peasnap className="svg-7"/>
 
             </div>
         </div>
