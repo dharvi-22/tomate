@@ -9,14 +9,15 @@ const Explore =() =>{
     const { recipes, fetchRecipes, loading } = useContext(RecipeContext);
 
     useEffect(() =>{
-        fetchRecipes();
-    })
+        if (recipes.length === 0){  //prevents duplicate fetches 
+            fetchRecipes();
+        }
+    }, []);
     return (
         <div className="explore-container">
             <h2>Explore Recipes</h2>
             <SearchBar />
                 {loading ? <p>⟳</p>: <RecipeList recipes={recipes}/>}
-            <RecipeList />
         </div>
     );
 };
