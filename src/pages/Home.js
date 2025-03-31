@@ -24,27 +24,30 @@ const Home = () => {
         <h1>Quick, Easy & <br />
           <span>Perfectly Portioned for One.</span>
         </h1>
-        <p>Find tasty recipes that suite your portion size.</p>
+        <p className="hero-p">Find tasty recipes that suite your portion size.</p>
 
       {/* meal match card*/}
       <div className="hero-cards">
         <div className="hero-card">
-          <img src={pizzaImg} alt="pizza" />
-            <h3>Meal Match</h3>
-            <p>Find tasty recipes that suite your portion size.</p>
+          <img src={pizzaImg} alt="pizza" className="recipe-img" />
+            <Link to="/meal-match" className="hero-card-text">
+                <h3>Meal Match</h3>
+                <p>Quickly browse through a set of recipes and swipe right to pick your match of the day.</p>
+            </Link>
         </div>
       
       {/* search by category card*/}
       <div className="hero-card">
-          <img src={pastaImg} alt="pasta" />
-            <h3>Search by Category</h3>
-            <p>Find tasty recipes that suite your portion size.</p>
+          <img src={pastaImg} alt="pasta" className="recipe-img"/>
+            <Link to="/explore" className="hero-card-text">
+                <h3>Search by Category</h3>
+                <p>Explore through our delicious catalogue based on popular categories.</p>
+            </Link>
       </div>
-
+      </div>
       <div className="hero-icon"> 
         <Icon/>
       </div>
-    </div>
     </div>
    
     <div className="carousel-container">
