@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import {useContext} from "react";
 import {RecipeContext} from "../context/recipeContext";
+import { Link } from "react-router-dom";
 import "../styles/recipeList.scss";
 
 const RecipeList = () =>{
@@ -49,10 +50,10 @@ const RecipeList = () =>{
     return (
         <div className="recipe-grid">
             {recipes.slice(0, visibleCount).map((recipe) => ( 
-                <div key={recipe.id} className="recipe-card">
+                <Link key={recipe.id} to={`/recipe/${recipe.id}`} className="recipe-card">
                     <img src={recipe.image} alt={recipe.title}/>
                     <p>{recipe.title}</p>
-                </div>
+                </Link>
             ))}
             <div className="load-more-container">
                 {visibleCount <= recipes.length && (
