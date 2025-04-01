@@ -15,3 +15,18 @@
     }
 
 }
+.ingredients{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+    padding: 2rem;
+    
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-size: 14px;
+    }
+}
