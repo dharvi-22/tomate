@@ -5,9 +5,12 @@ import { createContext, useState } from "react";
 //create a context for recipes
 export const RecipeContext = createContext();
 
-const RecipeProvider =({children}) =>{
-    //store fetched recipes
-    const [recipes, setRecipes] = useState([]); 
+const RecipeProvider =({children}) => {
+    //load recipes from local storage on initial render
+    const [recipes, setRecipes] = useState(() => {
+        const storedRecipes = localStorage.getItem("recipes");
+        return storedRecipes ? JSON.parse(storedRecipes) : [];
+    }); 
     //track loading state
     const [loading, setLoading] = useState(false);
 
@@ -16,6 +19,9 @@ const RecipeProvider =({children}) =>{
 
     //function to fetch recipes based on search term or category
     const fetchRecipes = async (query ="", category="") => {
+        //if recipes already exist in state, do not fetch again
+        if (recipes.length > 0) return;
+
         //start loading state
         setLoading(true);
 
@@ -37,6 +43,9 @@ const RecipeProvider =({children}) =>{
             const data = await response.json();
             //update state with fetched recipes
             setRecipes(data.results || []);
+
+            //store the fetched recipes in local storage so they persist after refresh
+            localStorage.setItem("recipes", JSON.stringify(data.results || []));
         } catch (error){
             console.error("Error fetching recipes:", error);
         }
