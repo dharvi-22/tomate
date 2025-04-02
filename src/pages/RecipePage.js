@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { RecipeContext } from "../context/recipeContext";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -19,7 +19,7 @@ const RecipePage = () => {
     const recipe = recipes.find((r) => r.id.toString() === id);
 
     //state to track the selected serving size, default to 2
-    const [selectedServings, setSelectedServings] = useState(2);
+    const [selectedServings, setSelectedServings] = useState(1);
 
     //function to update the selected serving size when toggled
     const handleToggle = (serving) => {
@@ -28,14 +28,14 @@ const RecipePage = () => {
 
     return (
         <div className="recipe-page">
-            {/* Breadcrumb Back Button */}
-            <button className={`back-button ${!recipe ? "not-found" : ""}`} onClick={() => navigate(-1)}>❮  Back</button>
 
             {/* renders if the recipe exist */}
             { recipe ? (
                 <>
                     <div className="recipe-header">
                         <img src={recipe.image} alt={recipe.title}/>
+                        {/* Breadcrumb Back Button */}
+                        <button className={`back-button ${!recipe ? "not-found" : ""}`} onClick={() => navigate(-1)}>❮  Back</button>
                         <h1>{recipe.title}</h1>
                     </div>
 
@@ -55,54 +55,57 @@ const RecipePage = () => {
                         </div>
                     </div>
 
-                    <div className="recipe-details">
-                        <div className="serving-size">
-                            <h3>Ingredients</h3>
-                            <p>Serves</p>
-                            <div className="toggle">
-                                {[1,2,3,4].map((num) => (
-                                    <button key={num} className={selectedServings === num ? "selected":""}
-                                        onClick={() => handleToggle(num)}>
-                                        {num}
-                                    </button>
-                                ))}
+                    <div className="r-background">
+    
+                        <div className="recipe-details">
+                            <div className="serving-size">
+                                <h3>Ingredients</h3>
+                                <p>Serves</p>
+                                <div className="toggle">
+                                    {[1,2,3,4].map((num) => (
+                                        <button key={num} className={selectedServings === num ? "selected":""}
+                                            onClick={() => handleToggle(num)}>
+                                            {num}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+    
+                            {/* ingredients checkbox list */}
+                            <div className="ingredients">
+                                <div role="group" aria-labelledby="ingredients-list">
+                                    {["1 Egg", "1 Avocado", "4 slices of bread", "1 tbsp mayonnaise", "Basil leaves"].map((item, index) => (
+                                        <label key={index}>
+                                            <input type="checkbox" />
+                                            {item}
+                                        </label>
+                                    ))}
+                                </div>
+                            </div>
+    
+                            {/* directions */}
+                            <div className="directions">
+                            <h3>Directions</h3>
+                                <p><strong>Step 1:</strong> Boil the eggs and toast the bread.</p>
+                                <p><strong>Step 2:</strong> Mash the avocado, spread it on the toast.</p>
+                                <p><strong>Step 3:</strong> Add the egg slices and enjoy!</p>
                             </div>
                         </div>
-
-                        {/* ingredients checkbox list */}
-                        <div className="ingredients">
-                            <div role="group" aria-labelledby="ingredients-list">
-                                {["1 Egg", "1 Avocado", "4 slices of bread", "1 tbsp mayonnaise", "Basil leaves"].map((item, index) => (
-                                    <label key={index}>
-                                        <input type="checkbox" />
-                                        {item}
-                                    </label>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* directions */}
-                        <div className="directions">
-                        <h3>Directions</h3>
-                            <p><strong>Step 1:</strong> Boil the eggs and toast the bread.</p>
-                            <p><strong>Step 2:</strong> Mash the avocado, spread it on the toast.</p>
-                            <p><strong>Step 3:</strong> Add the egg slices and enjoy!</p>
+    
+                        {/* scrollable recipe carousel */}
+                        <h3>You may also like...</h3>
+                        <div className="recipe-carousel">
+                            {recipes
+                                .filter((r) => r.id !== recipe.id)
+                                .slice(0,6)
+                                .map((r) => (
+                                    <div key ={r.id} className="carousel-item">
+                                        <img src={r.image} alt={r.title}/>
+                                        <p>{r.title}</p>
+                                    </div>
+                            ))}
                         </div> 
                     </div>
-
-                    {/* scrollable recipe carousel */}
-                {/* <h2>You may also like...</h2>
-                    <div className="recipe-carousel">
-                        {recipes
-                            .filter((r) => r.id !== recipe.id)
-                            .slice(0,6)
-                            .map((r) => (
-                                <div key ={r.id} className="carousel-item">
-                                    <img src={r.image} alt={r.title}/>
-                                    <p>{r.title}</p>
-                                </div>
-                        ))}
-                    </div> */}
                 </>
             ) : (
                 <p>Recipe not found.</p>
