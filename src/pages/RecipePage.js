@@ -58,34 +58,36 @@ const RecipePage = () => {
                     <div className="r-background">
     
                         <div className="recipe-details">
-                            <div className="serving-size">
-                                <h3>Ingredients</h3>
-                                <p>Serves</p>
-                                <div className="toggle">
-                                    {[1,2,3,4].map((num) => (
-                                        <button key={num} className={selectedServings === num ? "selected":""}
-                                            onClick={() => handleToggle(num)}>
-                                            {num}
-                                        </button>
-                                    ))}
+
+                            <div className="left-column">
+                                <div className="serving-size">
+                                    <h3>Ingredients</h3>
+                                    <p>Serves</p>
+                                    <div className="toggle">
+                                        {[1,2,3,4].map((num) => (
+                                            <button key={num} className={selectedServings === num ? "selected":""}
+                                                onClick={() => handleToggle(num)}>
+                                                {num}
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
-    
-                            {/* ingredients checkbox list */}
-                            <div className="ingredients">
-                                <div role="group" aria-labelledby="ingredients-list">
-                                    {["1 Egg", "1 Avocado", "4 slices of bread", "1 tbsp mayonnaise", "Basil leaves"].map((item, index) => (
-                                        <label key={index}>
-                                            <input type="checkbox" />
-                                            {item}
-                                        </label>
-                                    ))}
+                                {/* ingredients checkbox list */}
+                                <div className="ingredients">
+                                    <div role="group" aria-labelledby="ingredients-list">
+                                        {["1 Egg", "1 Avocado", "4 slices of bread", "1 tbsp mayonnaise", "Basil leaves"].map((item, index) => (
+                                            <label key={index}>
+                                                <input type="checkbox" />
+                                                {item}
+                                            </label>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
     
                             {/* directions */}
                             <div className="directions">
-                            <h3>Directions</h3>
+                                <h3>Directions</h3>
                                 <p><strong>Step 1:</strong> Boil the eggs and toast the bread.</p>
                                 <p><strong>Step 2:</strong> Mash the avocado, spread it on the toast.</p>
                                 <p><strong>Step 3:</strong> Add the egg slices and enjoy!</p>
