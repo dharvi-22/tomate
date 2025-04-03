@@ -1,0 +1,31 @@
+.match-container{
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: Quicksand;
+
+    h1{
+        color: #BD0300;
+        margin-bottom: 2rem;
+        font-size: 24px;
+    }
+    p{
+        font-size: 12px;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (min-width: 768px){
+    .match-container{
+        h3{
+            font-size: 32px;
+        }
+        p{
+            font-size: 16px;
+            max-width: 600px;
+        }
+    }
+}
