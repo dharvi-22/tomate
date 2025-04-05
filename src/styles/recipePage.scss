@@ -120,13 +120,13 @@
                     width: 30px;
                     height: 30px;
                     border-radius: 50%;
-                    border: 1px solid #BD0300;
+                    border: 2px solid #BD0300;
                     background: white;
                     color: #BD0300;
                     cursor: pointer;
 
                     &.selected{
-                        background: #a70502;
+                        background: #BD0300;
                         color: #FAF2F6;
                     }
                 }
