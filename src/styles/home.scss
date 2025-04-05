@@ -140,6 +140,17 @@
     }
 }
 
+@keyframes subtle-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 @keyframes scrollLoop {
     from{
@@ -216,6 +227,12 @@
         position: absolute;
         top: 8%;
         right: 25%;
+
+        &:hover {
+            Icon, svg {
+              animation: subtle-pulse 0.8s infinite ease-in-out;
+            }
+          }
     }
 
     .carousel-track{
