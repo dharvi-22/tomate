@@ -3,6 +3,8 @@ import "../styles/mealMatch.scss";
 import { useNavigate } from "react-router-dom";
 import { useContext, useState} from "react";
 import { RecipeContext } from "../context/recipeContext"; 
+import rightButton from "../assets/right-button.svg";
+import leftButton from "../assets/left-button.svg";
  
 
 
@@ -41,15 +43,24 @@ const MealMatch = () => {
 
         {/* condition if te recipes are greater than 0*/}
         {showGame && recipes.length > 0 && (
-            <div>
-                <img src={recipes[currentIndex].image} alt={recipes[currentIndex].title}/>
-                <div>
-                    <h3>{recipes[currentIndex].title}</h3>
-                    <p>Total Cook Time: 20 minutes</p>
-                    <p>Total Ingredients: 8</p>
-                </div>
-                <button onClick={nextRecipe}>☚</button>
-                <button onClick={viewRecipe}>⬆︎</button>
+            <div className="meal-container">
+                    
+                    <div className="meal-card">
+                        <img src={recipes[currentIndex].image} alt={recipes[currentIndex].title}/>
+                        <div className="meal-info">
+                            <h3>{recipes[currentIndex].title}</h3>
+                            <p>Total Cook Time: 20 minutes</p>
+                            <p>Total Ingredients: 8</p>
+                        </div>
+                    </div>
+                    <div className="button-group">
+                        <button className="left-button" onClick={nextRecipe}>
+                            <img src={leftButton} alt="left arrow to view next recipe"/>
+                        </button>
+                        <button className="right-button" onClick={viewRecipe}>
+                            <img src={rightButton} alt="heart button to view recipe"/>
+                        </button>
+                    </div>
             </div>
         )}
     </div>
