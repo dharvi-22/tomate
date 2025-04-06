@@ -209,7 +209,7 @@
         padding: 2rem;
 
         p{
-            padding-top: 6.5rem;
+            padding-top: 6rem;
         }
     }
     }
@@ -227,9 +227,10 @@
         position: absolute;
         top: 8%;
         right: 25%;
+        transition: all 0.3s ease;
 
         &:hover {
-            Icon, svg {
+             svg {
               animation: subtle-pulse 0.8s infinite ease-in-out;
             }
           }

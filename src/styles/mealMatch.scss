@@ -39,7 +39,7 @@
             cursor:pointer;
             img{
                 &:hover{
-                    border: 2px solid #BD0300; 
+                    border: 1px solid #BD0300; 
                     border-radius: 50%;
                     z-index: 1;
                 }
@@ -128,8 +128,5 @@
             max-width: 700px;
         }
 
-        .left-button, right-button{
-            
-        }
     }
 }

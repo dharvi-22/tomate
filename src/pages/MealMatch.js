@@ -1,9 +1,9 @@
 import React from "react";
 import "../styles/mealMatch.scss";
 import { useNavigate } from "react-router-dom";
-import { useContext, useState} from "react";
+import { useContext, useState } from "react";
 import { RecipeContext } from "../context/recipeContext"; 
-import rightButton from "../assets/right-button.svg";
+import viewButton from "../assets/view-button.svg";
 import leftButton from "../assets/left-button.svg";
  
 
@@ -13,6 +13,7 @@ const MealMatch = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showGame, setShowGame] = useState(false);
     const navigate = useNavigate();
+
 
     //function to start the game
     const startGame = () => {
@@ -34,6 +35,7 @@ const MealMatch = () => {
             navigate(`/recipe/${recipes[currentIndex].id}`);
         }
     };
+
 
     return (
     <div className="match-container">
@@ -58,7 +60,7 @@ const MealMatch = () => {
                             <img src={leftButton} alt="left arrow to view next recipe"/>
                         </button>
                         <button className="right-button" onClick={viewRecipe}>
-                            <img src={rightButton} alt="heart button to view recipe"/>
+                            <img src={viewButton} alt="heart button to view recipe"/>
                         </button>
                     </div>
             </div>

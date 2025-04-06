@@ -1,6 +1,8 @@
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { RecipeContext } from "../context/recipeContext";
 import { useParams, useNavigate } from "react-router-dom";
+import leftButton from "../assets/left-button.svg";
+import rightButton from "../assets/right-button.svg";
 
 
 import "../styles/recipePage.scss";
@@ -24,6 +26,19 @@ const RecipePage = () => {
     //function to update the selected serving size when toggled
     const handleToggle = (serving) => {
         setSelectedServings(serving);
+    };
+
+    //scrolling the carousel by buttons
+    const carouselRef = useRef(null);
+
+    const scroll = (direction) => {
+        const scrollAmount = 300;
+        if (carouselRef.current) {
+            carouselRef.current.scrollBy({
+                left: direction === "left" ? -scrollAmount : scrollAmount,
+                behavior: "smooth",
+            });
+        }
     };
 
     return (
@@ -96,17 +111,25 @@ const RecipePage = () => {
     
                         {/* scrollable recipe carousel */}
                         <h3>You may also like...</h3>
-                        <div className="recipe-carousel">
-                            {recipes
-                                .filter((r) => r.id !== recipe.id)
-                                .slice(0,6)
-                                .map((r) => (
-                                    <div key ={r.id} className="carousel-item">
-                                        <img src={r.image} alt={r.title}/>
-                                        <p>{r.title}</p>
-                                    </div>
-                            ))}
-                        </div> 
+                            <div className="recipe-carousel" ref={carouselRef}>
+                                {recipes
+                                    .filter((r) => r.id !== recipe.id)
+                                    .slice(0,6)
+                                    .map((r) => (
+                                        <div key ={r.id} className="carousel-item">
+                                            <img src={r.image} alt={r.title}/>
+                                            <p>{r.title}</p>
+                                        </div>
+                                ))}
+                            </div>
+                            <div className="carousel-buttons">
+                                <button onClick={() => scroll("left")} aria-label="Scroll left">
+                                    <img src={leftButton} alt="left arrow" />
+                                </button>
+                                <button onClick={() => scroll("right")} aria-label="Scroll right">
+                                    <img src={rightButton} alt="left arrow" />
+                                </button>
+                        </div>
                     </div>
                 </>
             ) : (
