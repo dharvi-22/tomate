@@ -2,7 +2,7 @@
 .hero-container{
     position: relative;
     text-align: left;
-    padding: 7rem 4rem;
+    padding: 7rem 2rem;
     margin: 0 auto;
     max-width: 100%;
     min-height: 200vh;
@@ -36,7 +36,7 @@
     p{
         text-align: left;
         font-family: Quicksand;
-        font-size: 12px;
+        font-size: 16px;
         color: #454543;
         margin-bottom: 1rem;
     }
@@ -45,19 +45,21 @@
         text-decoration: none;
         font-family: Quicksand, sans-serif;
         font-size: 14px;
+        font-weight: 500;
         display: inline-block;
         margin: 1.5rem auto;
         justify-content: center;
         border-radius: 25px;
-        color:#FEFDFE;
-        background-color: #BD0300;
+        color:#BD0300;
+        background-color: none;
         padding: 0.75rem 1.5rem;
-        border: none;
+        border: 2px solid #BD0300;
         cursor: pointer;
         margin-left: 0;
     
         &:hover{
-            background-color:#a70502;
+            background-color:#BD0300;
+            color:#FEFDFE;
         }
     }
     
@@ -102,7 +104,7 @@
             p{
                 font-family: Quicksand;
                 color:#FEFDFE;
-                font-size: 12px;
+                font-size: 16px;
                 text-decoration: none;
             }
             &:hover{
@@ -138,6 +140,17 @@
     }
 }
 
+@keyframes subtle-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 @keyframes scrollLoop {
     from{
@@ -196,7 +209,7 @@
         padding: 2rem;
 
         p{
-            padding-top: 6.5rem;
+            padding-top: 6rem;
         }
     }
     }
@@ -214,6 +227,13 @@
         position: absolute;
         top: 8%;
         right: 25%;
+        transition: all 0.3s ease;
+
+        &:hover {
+             svg {
+              animation: subtle-pulse 0.8s infinite ease-in-out;
+            }
+          }
     }
 
     .carousel-track{
