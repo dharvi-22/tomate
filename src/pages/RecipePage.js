@@ -3,6 +3,7 @@ import { RecipeContext } from "../context/recipeContext";
 import { useParams, useNavigate } from "react-router-dom";
 import leftButton from "../assets/left-button.svg";
 import rightButton from "../assets/right-button.svg";
+import { Link } from "react-router-dom";
 
 
 import "../styles/recipePage.scss";
@@ -116,10 +117,10 @@ const RecipePage = () => {
                                     .filter((r) => r.id !== recipe.id)
                                     .slice(0,6)
                                     .map((r) => (
-                                        <div key ={r.id} className="carousel-item">
+                                        <Link key ={r.id} to={`/recipe/${r.id}`} className="carousel-item">
                                             <img src={r.image} alt={r.title}/>
                                             <p>{r.title}</p>
-                                        </div>
+                                        </Link>
                                 ))}
                             </div>
                             <div className="carousel-buttons">
