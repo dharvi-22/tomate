@@ -1,4 +1,4 @@
-Project Description
+**Project Description**
 
 Tomate is a responsive React based recipes website, designed to help users easily discover and explore meal ideas. Aimed at people who struggle to cook for themselves but still enjoy a good home cooked meal. After having interviewed 6 people, I found two key factors that contributed to their struggle with cooking - convenience of finding recipes quickly and motivation to cook for one serving. Based on those findings, I implement my website to offer categorised recipe searches, customisable serving options, and visually engaging layouts to enhance user interaction. 
 
