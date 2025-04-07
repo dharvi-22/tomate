@@ -42,21 +42,27 @@
             color:#FEFDFE;
             text-decoration: none;
 
-        a{
-            color:#FEFDFE;
-            text-decoration: none;
-
-            &:hover{
-                border-bottom: 1.5px solid #FEFDFE;
+            p{
+                font-size: 14px;
+                max-width: 200px;
             }
-        }
+
+            a{
+                color:#FEFDFE;
+                text-decoration: none;
+
+            }
         }
 
     }
     .footer-contact {
         a{
-            font-size: 16px;
+            font-size: 14px;
             margin-top: 0;
+
+            &:hover{
+                border-bottom: 1.5px solid #FEFDFE;
+                }
         }
     }
     .footer-logo{
@@ -79,6 +85,10 @@
         .footer-links{
             text-align: left;
             order: 3;
+            p{
+                font-size: 14px;
+                max-width: 170px;
+            }
         }
         .footer-logo{
             display: flex;

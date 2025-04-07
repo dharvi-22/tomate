@@ -12,8 +12,9 @@ const Footer =() => {
                     <Link to="/form" className="footer-button">Request a Recipe</Link>
                 </div>
                 <ul className="footer-links">
-                    <li><Link to="/">Privacy Policy</Link></li>
-                    <li><Link to="/">Contact</Link></li>
+                    <li>Privacy Policy :</li>
+                    <li><p>This site does not collect or store personal data.</p></li>
+                    <li>Contact :</li>
                     <li className="footer-contact"><a href="mailto:info@tomate.com">info@tomate.com</a></li>
                 </ul>
                 <Link to="/"><img src={whitelogo} alt="tomato logo" className="footer-logo"></img></Link>
