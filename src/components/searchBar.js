@@ -31,17 +31,13 @@ const SearchBar = () => {
                 <button onClick={handleSearch}>➜</button>
             </div>
             {/* dropdown for selecting recipe category */}
-            <select value={selectedCategory} onChange={(e) => {
-                setSelectedCategory(e.target.value);
-                //fetch recipes instantly when category is selected
-                fetchRecipes("", e.target.value);
-            }}>
+            <select value={selectedCategory} onChange={handleCategoryChange}>
                 <option value="">I know the category...</option>
                 <option value="breakfast">Breakfast</option>
-                <option value="lunch">Lunch</option>
-                <option value="dinner">Dinner</option>
-                <option value="gluten free">Gluten-Free</option>
-                <option value="pasta">Pasta</option>
+                <option value="side dish">Lunch</option>
+                <option value="main dish">Dinner</option>
+                <option value="dessert">Dessert</option>
+                <option value="salad">Gluten-Free</option>
             </select>
         </div>
     );

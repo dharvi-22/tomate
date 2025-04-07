@@ -20,7 +20,7 @@ const RecipeProvider =({children}) => {
     //function to fetch recipes based on search term or category
     const fetchRecipes = async (query ="", category="") => {
         //if recipes already exist in state, do not fetch again
-        if (recipes.length > 0) return;
+        //if (recipes.length > 0) return;
 
         //start loading state
         setLoading(true);

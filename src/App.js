@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RecipeProvider from './context/recipeContext';
+import ScrollTop from "./components/scrollTop";
 
 import Home from "./pages/Home";
 import Form from "./pages/Form";
@@ -16,6 +17,7 @@ function App() {
   return (
     <RecipeProvider>
       <Router>
+      <ScrollTop />
        <Header />
 
        <main>
