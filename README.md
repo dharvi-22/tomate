@@ -1,5 +1,4 @@
-Project Description
-
+**Project Description**
 Tomate is a responsive React based recipes website, designed to help users easily discover and explore meal ideas. Aimed at people who struggle to cook for themselves but still enjoy a good home cooked meal. After having interviewed 6 people, I found two key factors that contributed to their struggle with cooking - convenience of finding recipes quickly and motivation to cook for one serving. Based on those findings, I implement my website to offer categorised recipe searches, customisable serving options, and visually engaging layouts to enhance user interaction. 
 
 As a recipes website, Tomate includes the following functionalities:
@@ -16,7 +15,8 @@ In terms of security, my website is deployed through Vercel, which automatically
 
 To conclude, it was my first time using React, SASS and an external API, therefore it was challenging to understand how to combine everything seamlessly, specially React Context API, however with research, help from AI, trial and error, I was able to integrate everything smoothly. 
 
-Citations
+**Citations**
+
 Context Page:
 OpenAI. (2025). ChatGPT response to a query about calling and storing from api. Retrieved from https://chat.openai.com
 
