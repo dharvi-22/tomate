@@ -20,7 +20,9 @@ const SearchBar = () => {
     const handleCategoryChange = (e) => {
         const category = e.target.value;
         setSelectedCategory(category);
-        fetchRecipes("", category); // Fetch only by category if no search term
+
+        // Fetch only by category if no search term
+        fetchRecipes("", category); 
     };
 
     return (
