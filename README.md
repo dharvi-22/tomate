@@ -16,6 +16,8 @@ In terms of security, my website is deployed through Vercel, which automatically
 
 To conclude, it was my first time using React, SASS and an external API, therefore it was challenging to understand how to combine everything seamlessly, specially React Context API, however with research, help from AI, trial and error, I was able to integrate everything smoothly. 
 
+[ Live Deployment Link: please find below 'About' section on the righ-hand side ]
+
 **Citations**
 
 Context Page:
