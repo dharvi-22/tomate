@@ -10,7 +10,8 @@ const Explore =() =>{
     const { recipes, fetchRecipes, loading } = useContext(RecipeContext);
 
     useEffect(() =>{
-        if (recipes.length === 0){  //prevents duplicate fetches 
+        //prevents duplicate fetches 
+        if (recipes.length === 0){  
             fetchRecipes();
         }
     }, []);
